@@ -58,7 +58,6 @@ const teamMembers = ref([
 ])
 
 const initializeComponent = () => {
-  // Ініціалізація компонента
   console.log('Team component initialized/activated')
 }
 
