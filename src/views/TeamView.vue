@@ -38,7 +38,7 @@ const teamMembers = ref([
   {
     name: 'SHUMAKOVA OKSANA',
     role: 'Fullstack Developer',
-    avatar: 'https://api.dicebear.com/8.x/avataaars/svg?seed=xenia',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=xenia',
     social: {
       linkedin: '#',
       github: '#',
@@ -130,21 +130,30 @@ onActivated(() => {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+grid-template-columns: repeat(3, 1fr);  gap: 2rem;
 }
 
 .team-member {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
   background: rgba(255, 255, 255, 0);
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .team-member:hover {
   transform: translateY(-10px);
+   border-color: rgba(52, 152, 219, 0.5);
+  box-shadow: 0 10px 25px rgba(52, 152, 219, 0.2);
+}
+
+.team-member:nth-child(n+4) {
+  grid-column: span 1;
 }
 
 .member-avatar {
