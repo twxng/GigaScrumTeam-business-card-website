@@ -178,14 +178,14 @@ body {
 }
 
 .foot-content {
-  padding-top: 500px;
+  padding-top: 300px;
   background: radial-gradient(circle at bottom,
-      rgba(54, 175, 165, 0.301) 3%,
-      rgba(24, 177, 194, 0.2) 5%,
-      rgba(28, 76, 78, 0.11) 20%,
-      rgba(0, 0, 0, 0) 28%,
-      rgba(28, 76, 78, 0.021) 28%,
-      rgba(0, 0, 0, 0) 28%);
+      rgba(54, 175, 165, 0.301) 5%,
+      rgba(24, 177, 194, 0.2) 10%,
+      rgba(28, 76, 78, 0.11) 30%,
+      rgba(179, 13, 13, 0) 35%,
+      rgba(28, 76, 78, 0.021) 35%,
+      rgba(0, 0, 0, 0) 35%);
   color: white;
   text-align: center;
   width: 100%;

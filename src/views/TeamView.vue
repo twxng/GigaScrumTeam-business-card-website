@@ -6,8 +6,8 @@ import TeamMember3D from '@/components/TeamMember3D.vue'
 
 const teamMembers = ref([
   {
-    name: 'Барановський Євген',
-    role: 'Скрам мастер, бекенд розробник',
+    name: 'BARANOVSKYI YEVHEN',
+    role: 'Scrum Master, Backend Developer',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=eugene',
     social: {
       linkedin: '#',
@@ -16,8 +16,8 @@ const teamMembers = ref([
     }
   },
   {
-    name: 'Кіщук Михайло',
-    role: 'Бекенд розробник',
+    name: 'KISHCHUK MYKHAILO',
+    role: 'Backend Developer',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=michael',
     social: {
       linkedin: '#',
@@ -25,10 +25,20 @@ const teamMembers = ref([
       telegram: '#'
     }
   },
+  // {
+  //   name: 'SHUMAKOVA OKSANA',
+  //   role: 'Fullstack Developer',
+  //   avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=oksana',
+  //   social: {
+  //     linkedin: '#',
+  //     github: '#',
+  //     telegram: '#'
+  //   }
+  // },
   {
-    name: 'Шумакова Оксана',
-    role: 'Фулстек розробник',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=oksana',
+    name: 'SHUMAKOVA OKSANA',
+    role: 'Fullstack Developer',
+    avatar: 'https://api.dicebear.com/8.x/avataaars/svg?seed=xenia',
     social: {
       linkedin: '#',
       github: '#',
@@ -36,8 +46,8 @@ const teamMembers = ref([
     }
   },
   {
-    name: 'Айрапетян Роберт',
-    role: 'Фронтенд розробник',
+    name: 'AIRAPETIAN ROBERT',
+    role: 'Frontend Developer',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=robert',
     social: {
       linkedin: '#',
@@ -46,8 +56,8 @@ const teamMembers = ref([
     }
   },
   {
-    name: 'Бабієнко Олег',
-    role: 'Тестувальник',
+    name: 'BABIIENKO OLEH',
+    role: 'Tester',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=oleg',
     social: {
       linkedin: '#',

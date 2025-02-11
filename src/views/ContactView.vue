@@ -86,7 +86,7 @@ onMounted(() => {
             <i class="fas fa-envelope"></i>
             <div>
               <h3>Email</h3>
-              <p>contact@gigascrumteam.com</p>
+              <p>gigascrumteam@gmail.com</p>
             </div>
           </div>
 
@@ -94,7 +94,7 @@ onMounted(() => {
             <i class="fas fa-phone"></i>
             <div>
               <h3>Phone</h3>
-              <p>+380 99 123 45 67</p>
+              <p>+380 99 000 00 00</p>
             </div>
           </div>
 
@@ -154,16 +154,18 @@ onMounted(() => {
 }
 
 .contact-info h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   background: linear-gradient(45deg, #3498db, #2ecc71);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.contact-info > p {
+.contact-info>p {
   font-size: 1.2rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 3rem;
 }
 
@@ -175,35 +177,55 @@ onMounted(() => {
 .contact-method {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(52, 152, 219, 0.3);
 }
 
 .contact-method i {
   font-size: 1.5rem;
   color: #3498db;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(52, 152, 219, 0.1);
-  border-radius: 50%;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact-method:hover i {
+  background: rgba(52, 152, 219, 0.2);
+  transform: scale(1.1);
 }
 
 .contact-method h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-method p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .contact-form {
-  background: rgba(255, 255, 255, 0.055);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
 }
 
 .form-group {
@@ -212,18 +234,21 @@ onMounted(() => {
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
-  color: #666;
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  background: #ffffff2f;
-  padding: 0.75rem;
-  border: 1px solid #e9ecef3d;
-  border-radius: 8px;
-  transition: border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
 }
 
 .form-group textarea {
@@ -235,22 +260,28 @@ onMounted(() => {
 .form-group textarea:focus {
   outline: none;
   border-color: #3498db;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
 }
 
 .submit-btn {
   width: 100%;
   padding: 1rem;
-  background: #3498db;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 600;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
 
 .submit-btn:disabled {
@@ -259,20 +290,34 @@ onMounted(() => {
 }
 
 .success-message {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   padding: 1rem;
-  background: #d4edda;
-  color: #155724;
-  border-radius: 8px;
+  background: rgba(46, 204, 113, 0.1);
+  color: #2ecc71;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
+  border: 1px solid rgba(46, 204, 113, 0.2);
+  font-weight: 500;
+}
+
+.success-message i {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
+  }
+
+  .contact-info h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-method {
+    padding: 1.2rem;
   }
 }
 </style>

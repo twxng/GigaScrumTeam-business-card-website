@@ -116,7 +116,8 @@ const currentTestimonial = ref(0)
 
 const runningText = ref([
   'React', 'Vue.js', 'Node.js', 'TypeScript', 'Python', 'Docker',
-  'AWS', 'Azure', 'MongoDB', 'PostgreSQL', 'GraphQL', 'REST API'
+  'AWS', 'Azure', 'MongoDB', 'PostgreSQL', 'GraphQL', 'REST API', 'Db Forge', 'Tailwind CSS', 'Angular', 'Svelte', 'Nuxt.js', 'Next.js',
+  'Figma'
 ])
 
 onMounted(() => {
@@ -136,15 +137,13 @@ onMounted(() => {
 
   // Автоматична зміна відгуків
   setInterval(() => {
-    gsap.to('.testimonial-content', {
+    gsap.to('.testimonial-content p', {
       opacity: 0,
-      y: -20,
       duration: 0.5,
       onComplete: () => {
         currentTestimonial.value = (currentTestimonial.value + 1) % testimonials.value.length
-        gsap.to('.testimonial-content', {
+        gsap.to('.testimonial-content p', {
           opacity: 1,
-          y: 0,
           duration: 0.5
         })
       }
@@ -231,7 +230,7 @@ onUnmounted(() => {
     <!-- Бігаюча стрічка -->
     <div class="marquee">
       <div class="marquee-content">
-        <span v-for="(text, index) in runningText" :key="index">
+        <span v-for="(text, index) in runningText.concat(runningText)" :key="index">
           {{ text }}
           <i class="fas fa-circle"></i>
         </span>
@@ -264,10 +263,20 @@ onUnmounted(() => {
       <h2>What people say about us</h2>
       <div class="testimonial-slider">
         <div class="testimonial-content">
+          <div class="quote-marks">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14,24H6l8-10v18zm18-10v18h8l-8-10z" fill="rgba(52, 152, 219, 0.2)" />
+            </svg>
+          </div>
           <p>{{ testimonials[currentTestimonial].text }}</p>
           <div class="testimonial-author">
-            <h4>{{ testimonials[currentTestimonial].author }}</h4>
-            <span>{{ testimonials[currentTestimonial].position }}</span>
+            <div class="author-avatar">
+              {{ testimonials[currentTestimonial].author.charAt(0) }}
+            </div>
+            <div class="author-info">
+              <h4>{{ testimonials[currentTestimonial].author }}</h4>
+              <span>{{ testimonials[currentTestimonial].position }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -564,7 +573,7 @@ html {
 .testimonials h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   background: linear-gradient(45deg, #3498db, #2ecc71);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -583,32 +592,55 @@ html {
   position: relative;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-.testimonial-content::before {
-  content: '"';
+.testimonial-content:hover {
+  border-color: rgba(52, 152, 219, 0.3);
+  box-shadow: 0 8px 32px rgba(52, 152, 219, 0.1);
+}
+
+.quote-marks {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  font-size: 6rem;
-  color: rgba(52, 152, 219, 0.2);
-  font-family: serif;
 }
 
 .testimonial-content p {
   font-size: 1.5rem;
   line-height: 1.8;
   color: #e2e2e2;
-  margin-bottom: 2.5rem;
+  margin: 2rem 0 2.5rem;
   position: relative;
   z-index: 1;
+  font-style: italic;
 }
 
 .testimonial-author {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .testimonial-author h4 {
@@ -676,8 +708,6 @@ html {
   margin: 4rem auto;
   padding: 6rem 4rem;
 }
-
-
 
 .stat-item h3 {
   font-size: 3rem;
